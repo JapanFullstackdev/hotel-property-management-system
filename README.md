@@ -44,7 +44,7 @@ This application manages hotel operations including rooms, reservations, and use
 
 ### Room
 
-<img src="./docs/screenshots/room.png" width="900">
+<img src="./docs/screenshots/rooms.png" width="900">
 
 ### Reservation
 
@@ -52,7 +52,7 @@ This application manages hotel operations including rooms, reservations, and use
 
 ## Architecture
 
-<img src="./docs/architecture.png" width="900">
+<img src="./docs/screenshots/architecture.png" width="900">
 
 ---
 
