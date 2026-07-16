@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+
+ postgres:
+  image: postgres:16
+  environment:
+   POSTGRES_USER: hotel_admin
+   POSTGRES_PASSWORD: hotel123
+   POSTGRES_DB: hotel_management
+  ports:
+   - "5432:5432"
+
+
+ backend:
+  build: ./backend
+  ports:
+   - "3000:3000"
+  depends_on:
+   - postgres

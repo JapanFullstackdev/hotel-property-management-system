@@ -25,11 +25,25 @@ model Room {
   reservations Reservation[]
 }
 
+model Payment {
+  id            Int      @id @default(autoincrement())
+  reservationId Int
+  amount        Float
+  status        String
+  createdAt     DateTime @default(now())
+
+  reservation Reservation @relation(fields: [reservationId], references: [id])
+}
+
 model Reservation {
   id        Int      @id @default(autoincrement())
   guestName String
   checkIn   DateTime
   checkOut  DateTime
   roomId    Int
-  room      Room     @relation(fields: [roomId], references: [id])
+
+  room Room @relation(fields:[roomId], references:[id])
+
+  payments Payment[]
 }
+
