@@ -1,28 +1,64 @@
-import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
+import {
+ Controller,
+ Get,
+ Post,
+ Body,
+ Param,
+ Patch,
+ Delete
+} from '@nestjs/common';
+
 import { RoomsService } from './rooms.service';
+import { CreateRoomDto } from './dto/create-room.dto';
+
 
 @Controller('rooms')
 export class RoomsController {
 
-  constructor(private service: RoomsService){}
+constructor(
+ private readonly roomsService: RoomsService
+){}
 
-  @Get()
-  findAll(){
-    return this.service.findAll();
-  }
 
-  @Get(':id')
-  findOne(@Param('id') id:string){
-    return this.service.findOne(Number(id));
-  }
+@Post()
+create(
+ @Body() dto: CreateRoomDto
+){
+ return this.roomsService.create(dto);
+}
 
-  @Post()
-  create(@Body() body:any){
-    return this.service.create(body);
-  }
 
-  @Delete(':id')
-  remove(@Param('id') id:string){
-    return this.service.remove(Number(id));
-  }
+@Get()
+findAll(){
+ return this.roomsService.findAll();
+}
+
+
+@Get(':id')
+findOne(
+ @Param('id') id:string
+){
+ return this.roomsService.findOne(Number(id));
+}
+
+
+@Patch(':id')
+update(
+ @Param('id') id:string,
+ @Body() dto:CreateRoomDto
+){
+ return this.roomsService.update(
+  Number(id),
+  dto
+ );
+}
+
+
+@Delete(':id')
+remove(
+ @Param('id') id:string
+){
+ return this.roomsService.remove(Number(id));
+}
+
 }
