@@ -30,29 +30,29 @@ This application manages hotel operations including rooms, reservations, and use
 - Docker (planned)
 
 ---
+# 🏨 Hotel Property Management System
 
-# 🏗 Architecture
-+----------------+
-| React Frontend |
-| Vite + TS |
-+-------+--------+
-|
-|
-v
-+----------------+
-| NestJS API |
-| REST Backend |
-+-------+--------+
-|
-|
-v
-+----------------+
-| PostgreSQL |
-| Prisma ORM |
-+----------------+
+## Screenshots
 
+### Dashboard
 
----
+<img src="./docs/screenshots/dashboard.png" width="900">
+
+### Login
+
+<img src="./docs/screenshots/login.png" width="900">
+
+### Room
+
+<img src="./docs/screenshots/room.png" width="900">
+
+### Reservation
+
+<img src="./docs/screenshots/reservation.png" width="900">
+
+## Architecture
+
+<img src="./docs/architecture.png" width="900">
 
 ---
 
